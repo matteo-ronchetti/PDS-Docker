@@ -21,7 +21,7 @@ RUN rm -r rplsh
 
 # install FastFlow
 RUN git clone  https://github.com/fastflow/fastflow.git
-RUN cd fastflow && git checkout b396caa129761f1a633b6b290373f79c0ddb7025 && mkdir build && cd build && cmake .. -DBUILD_TESTS=OFF -DBUILD_EXAMPLES=ON $
+RUN cd fastflow && git checkout b396caa129761f1a633b6b290373f79c0ddb7025 && mkdir build && cd build && cmake .. -DBUILD_TESTS=OFF -DBUILD_EXAMPLES=ON && make && make install
 
 WORKDIR /mnt/src
 CMD make
